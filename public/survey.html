@@ -11,10 +11,23 @@
     
 
 <script type="text/javascript">
-    // JQUERY WILL INITIATE POST AND SEND TO API ROUTE WHICH IS LISTENING
- $.post('/api/new')
+    
+    
+    function getApi(){
+        var currentURL = window.location.origin;
+      // AJAX request to the friends API
+        $.ajax({ url: currentURL + "api/friends", method: "GET"}).then(function(friends){
+          console.log("URL:" + currentURL + "/api/friends");
+          console.log(friends);
+          // Looping through the friends API
+          for (var i = 0; i < friends.length; i++){
+              var friendsDisplay = $("<div>");
+          }
+      }  
+    
+$.post('/api/new',)
 // Look up to grab selected score... :selected
-
+}
 </script>
 </body>
 </html>
